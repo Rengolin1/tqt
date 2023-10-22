@@ -1,3 +1,6 @@
+# Файл с интерфейсом основного окна
+
+
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 
@@ -23,7 +26,7 @@ button_groupbox.addButton(ans3_button)
 button_groupbox.addButton(ans4_button)
 
 result_box = QGroupBox("Результати тестування")
-question_label = QLabel("")
+question_label = QLabel("ferferfeferfe")
 correct_label = QLabel("")
 
 main_layout = QVBoxLayout()
@@ -38,10 +41,11 @@ column1_buttons = QVBoxLayout()
 column2_buttons = QVBoxLayout()
 
 head_layout.addWidget(menu_button, alignment=Qt.AlignLeft)
+head_layout.addStretch(1)
 head_layout.addWidget(rest_button, alignment=Qt.AlignRight)
 head_layout.addWidget(rest_spinbox, alignment=Qt.AlignRight)
 
-underhead_layout.addWidget(question_label, alignment = Qt.AlignCenter)
+underhead_layout.addWidget(question_label, alignment=Qt.AlignCenter)
 
 column1_buttons.addWidget(ans1_button)
 column1_buttons.addWidget(ans2_button)
@@ -58,7 +62,9 @@ result_layout.addWidget(correct_label)
 
 result_box.setLayout(result_layout)
 
-footer_layout.addWidget(ans_button)
+footer_layout.addStretch(1)
+footer_layout.addWidget(ans_button, stretch=2)
+footer_layout.addStretch(1)
 
 main_layout.addLayout(head_layout)
 main_layout.addLayout(underhead_layout)
@@ -75,3 +81,5 @@ def showQuestion():
     question_box.show()
     result_box.hide()
     ans_button.setText("Ответить")
+
+
